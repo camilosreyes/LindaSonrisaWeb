@@ -1,17 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 package dto;
-import java.io.Serializable;
 
-/**
- *
- * @author PC
- */
-public class BoletaDto implements Serializable{
+public class BoletaDto{
     
    private int id_boleta; //PK
     private int id_cliente;//FK
@@ -20,12 +11,9 @@ public class BoletaDto implements Serializable{
     private String fecha_boleta;
 
     public BoletaDto() {
+        
     }
 
-    
-    
-  
-    
     public int getId_boleta() {
         return id_boleta;
     }
@@ -95,9 +83,5 @@ public class BoletaDto implements Serializable{
         }
         return true;
     }
-    
-    
-    
-    
-    
+
 }

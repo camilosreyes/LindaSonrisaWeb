@@ -13,7 +13,7 @@ public class SituacionEconomicaDto {
     private String nombre_isapre;
     private char tramo_fonasa; 
 
-    public situacionEconomicaDto() {
+    public SituacionEconomicaDto() {
         
     }
     
@@ -91,7 +91,7 @@ public class SituacionEconomicaDto {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final situacionEconomicaDto other = (situacionEconomicaDto) obj;
+        final SituacionEconomicaDto other = (SituacionEconomicaDto) obj;
         if (this.id_cliente != other.id_cliente) {
             return false;
         }
