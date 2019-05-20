@@ -6,22 +6,7 @@ J
 R
 Tipo
 SQL
-Tamaño
-7 KB (6.770 bytes)
-Almacenamiento usado
-0 bytesPropiedad de
-Ubicación
-Iteracción 2
-Propietario
-Juan Cuadra
-Modificado
-16:37 por Juan Cuadra
-Abierto
-16:39 por mí
-Creación
-16:37
-Añadir descripción
-Los lectores pueden descargar
+
 CREATE TABLE "boleta" (
 "id_boleta" NUMBER(11,0) NOT NULL,
 "id_cliente" NUMBER(11,0) NOT NULL,
