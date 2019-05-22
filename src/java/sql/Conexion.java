@@ -8,7 +8,7 @@ public class Conexion {
         Connection connection = null;
         try {
            String driverClassName = "oracle.jdbc.driver.OracleDriver";
-           String driverUrl="jdbc:oracle:thin:@localhost:1521:XE";
+           String driverUrl="jdbc:oracle:thin:@192.168.10.26:1521:XE";
            Class.forName(driverClassName);
            connection = DriverManager.getConnection(
                    driverUrl, "system","system");
