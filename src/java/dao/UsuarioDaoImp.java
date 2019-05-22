@@ -1,9 +1,11 @@
 package dao;
 
 import dto.UsuarioDto;
+import java.sql.Connection;
 import sql.Conexion;
 
 import java.sql.PreparedStatement;
+import java.util.ArrayList;
 
 public class UsuarioDaoImp implements UsuarioDao {
     @Override
@@ -22,5 +24,25 @@ public class UsuarioDaoImp implements UsuarioDao {
             System.out.println("Error al agregar "+e.getMessage());
         }
         return false;
+    }
+
+    @Override
+    public boolean eliminar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public ArrayList<UsuarioDto> listar() {
+        ArrayList<UsuarioDto> lista = new ArrayList<>();
+        try{
+            Connection conexion = Conexion.getConexion();
+            String query = "SELECT  FROM USUARIO";
+        }
+    }
+    
+
+    @Override
+    public boolean modificar(UsuarioDto dto) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
