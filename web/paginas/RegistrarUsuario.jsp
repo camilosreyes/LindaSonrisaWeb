@@ -38,7 +38,11 @@
                 <div class="form-group">
                     <label for="firstName" class="col-sm-3 control-label">Rol</label>
                     <div class="col-sm-9">
-                        <input type="text" name="txtRol" placeholder="Rol" >
+                        <select name="cmbRol" class="col-sm-3 ">
+                            <option value="1">Administrador</option>
+                            <option value="2">Cliente</option>
+                            <option value="3">Empleado</option>
+                        </select>
                     </div>
                 </div>
                 <br>

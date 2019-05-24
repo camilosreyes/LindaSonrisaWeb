@@ -5,6 +5,8 @@ import java.sql.Connection;
 import sql.Conexion;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class UsuarioDaoImp implements UsuarioDao {
@@ -36,13 +38,39 @@ public class UsuarioDaoImp implements UsuarioDao {
         ArrayList<UsuarioDto> lista = new ArrayList<>();
         try{
             Connection conexion = Conexion.getConexion();
-            String query = "SELECT  FROM USUARIO";
+            String query = "SELECT * FROM USUARIO ORDER BY ID_USUARIO";
+            PreparedStatement buscar = conexion.prepareStatement(query);
+            ResultSet rs = buscar.executeQuery(); 
+            while(rs.next()){
+                UsuarioDto usuario = new UsuarioDto();
+                usuario.setId_usuario(rs.getInt("id_usuario"));
+                usuario.setUsername(rs.getString("username"));
+                usuario.setRol(rs.getInt("rol"));
+                lista.add(usuario);
+            }
+        } catch (SQLException ex) {
+            System.out.println("Error al listar "+ex.getMessage());
         }
+        System.out.println(lista);
+        return lista;
     }
     
 
     @Override
     public boolean modificar(UsuarioDto dto) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try{
+            Connection conexion = Conexion.getConexion();
+            String query = "UPDATE USUARIO SET ROL= ? WHERE ID_USUARIO = ?";
+            PreparedStatement modificar = conexion.prepareStatement(query);
+            modificar.setInt(1, dto.getRol());
+            modificar.setInt(2,dto.getId_usuario());
+            modificar.execute();
+            return true;
+        }catch(SQLException w){
+            System.out.println("error Sql al editar " + w.getMessage());
+        }catch(Exception e){
+            System.out.println("Error al editar "+ e.getMessage());
+        }
+        return false;
     }
 }

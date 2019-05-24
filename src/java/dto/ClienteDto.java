@@ -11,8 +11,9 @@ public class ClienteDto {
     private char sexo;
     private String nacionalidad;
     private String celular;
-    private int correo_electronico; //FK
+    private String correo_electronico; //FK
     private String direccion;
+    private int estado;
 
     public ClienteDto() {
     }
@@ -81,11 +82,11 @@ public class ClienteDto {
         this.celular = celular;
     }
 
-    public int getCorreo_electronico() {
+    public String getCorreo_electronico() {
         return correo_electronico;
     }
 
-    public void setCorreo_electronico(int correo_electronico) {
+    public void setCorreo_electronico(String correo_electronico) {
         this.correo_electronico = correo_electronico;
     }
 
@@ -96,16 +97,24 @@ public class ClienteDto {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
+    
+    public int getEstado() {
+        return estado;
+    }
+    
+    public void setEstado(int estado){
+        this.estado = estado;
+    }
 
     @Override
     public String toString() {
-        return "ClienteDto{" + "id_cliente=" + id_cliente + ", rut=" + rut + ", nombres=" + nombres + ", apellidos=" + apellidos + ", fecha_nacimiento=" + fecha_nacimiento + ", sexo=" + sexo + ", nacionalidad=" + nacionalidad + ", celular=" + celular + ", correo_electronico=" + correo_electronico + ", direccion=" + direccion + '}';
+        return "ClienteDto{" + "id_cliente=" + id_cliente + ", rut=" + rut + ", nombres=" + nombres + ", apellidos=" + apellidos + ", fecha_nacimiento=" + fecha_nacimiento + ", sexo=" + sexo + ", nacionalidad=" + nacionalidad + ", celular=" + celular + ", correo_electronico=" + correo_electronico + ", direccion=" + direccion + ", estado=" + estado + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 71 * hash + this.id_cliente;
+        hash = 97 * hash + this.id_cliente;
         return hash;
     }
 
@@ -125,5 +134,7 @@ public class ClienteDto {
             return false;
         }
         return true;
-    }  
+    }
+
+    
 }

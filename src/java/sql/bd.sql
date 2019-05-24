@@ -190,3 +190,5 @@ ALTER TABLE "reservahora" ADD CONSTRAINT "reservahora_ibfk_2" FOREIGN KEY ("id_c
 ALTER TABLE "servicio" ADD CONSTRAINT "servicio_ibfk_1" FOREIGN KEY ("id_especialidad") REFERENCES "especialidad" ("id_especialidad");
 ALTER TABLE "servicio" ADD CONSTRAINT "servicio_ibfk_2" FOREIGN KEY ("id_producto") REFERENCES "producto" ("id_producto");
 ALTER TABLE "situacioneconomica" ADD CONSTRAINT "situacioneconomica_ibfk_1" FOREIGN KEY ("id_cliente") REFERENCES "cliente" ("id_cliente");
+
+INSERT INTO CLIENTE VALUES (1,'18528468-9','Camilo Alfredo','Soto Reyes','01/05/1993','m','Chilena','987654321','email@123.com','calle falsa 123',1);

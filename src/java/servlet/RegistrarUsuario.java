@@ -42,14 +42,14 @@ public class RegistrarUsuario extends HttpServlet {
             dto.setId_usuario(Integer.parseInt(request.getParameter("txtId").trim()));
             dto.setUsername(request.getParameter("txtUsuario").trim());
             dto.setPassword(request.getParameter("txtContrasena").trim());
-            dto.setRol(Integer.parseInt(request.getParameter("txtRol").trim()));
+            dto.setRol(Integer.parseInt(request.getParameter("cmbRol").trim()));
             System.out.println(dto);
             
             if(new UsuarioDaoImp().agregar(dto)){
                 request.setAttribute("mensaje", "Grabado!");
             }else{
                 request.setAttribute("mensaje", "No se grabo");
-                request.getRequestDispatcher("/index.html")
+                request.getRequestDispatcher("/RegistrarUsuario.jsp")
                     .forward(request, response);
             }
         } 
